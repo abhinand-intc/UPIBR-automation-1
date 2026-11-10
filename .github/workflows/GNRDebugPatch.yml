@@ -1168,7 +1168,7 @@ jobs:
   call-gnr-login:
     needs: [session-management, copy-release-collaterals]
     if: ${{ success() }}
-    uses: PrathyushaKummara23/UPIBR-automation/.github/workflows/logingnr.yml@master
+    uses: abhinand-intc/UPIBR-automation-1/.github/workflows/logingnr.yml@master
     secrets: inherit
     with:
       session_id: ${{ needs.session-management.outputs.session_id }}
@@ -1178,7 +1178,7 @@ jobs:
   call-read-gnr-pipeline-result:
     needs: [session-management, call-gnr-login]
     if: ${{ success() }}
-    uses: PrathyushaKummara23/UPIBR-automation/.github/workflows/Read_GNR_Pipeline_Result.yml@master
+    uses: abhinand-intc/UPIBR-automation-1/.github/workflows/Read_GNR_Pipeline_Result.yml@master
     secrets: inherit
     with:
       session_id: ${{ needs.session-management.outputs.session_id }}
